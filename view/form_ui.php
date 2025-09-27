@@ -1,7 +1,4 @@
-<?php
-    include_once("./controller/input-controller.php");
-?>
-<div class="d-flex justify-content-center">
+<div class="w-100 d-flex align-items-center flex-column">
     <form action="" method="POST" class="d-flex flex-column gap-4 w-25">
         <section class="form-group d-flex flex-column gap-2">
             <label>Jumlah Populasi</label>
@@ -14,3 +11,6 @@
         <button type="submit" class="btn btn-primary">Jalankan Perhitungan</button>
     </form>
 </div>
+<?php
+    require_once("./controller/input-controller.php");
+?>

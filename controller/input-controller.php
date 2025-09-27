@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $rounded_result = round($result);
 
-        echo$rounded_result;
+        include_once("./view/result.php");
     }
 }
 ?>
