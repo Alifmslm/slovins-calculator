@@ -1,15 +1,32 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     # code...
-    $population = htmlspecialchars($_POST["input_population"]);
-    $error = htmlspecialchars($_POST["input_error"]);
+    $population = filter_input(INPUT_POST,'input_population', FILTER_VALIDATE_INT);
+    $error_rate = filter_input(INPUT_POST,'input_error', FILTER_VALIDATE_FLOAT);
 
-    $int_population = (int)$population;
-    $int_error = (int)$error / 100;
+    // ubah bentuk angka menjadi persen(desimal)
+    $error_percen = $error_rate / 100;
 
-    $result = round($int_population / (1 + $int_population * pow(($int_error), 2)));
-    echo $result;
-} else {
-    echo "Gagal Melakukan Proses Post.";
+    $result = null;
+
+    if ($population === false || $error_rate === false) {
+        echo'Tipe data anda salah';
+    } else if ($population <= 0 || $error_rate <= 0){
+        echo 'Input tidak boleh 0';
+    } else {
+        $denominator = 1 + $population * pow($error_percen, 2);
+        
+        try {
+            $result = $population / $denominator;
+        } catch (DivisionByZeroError $ez) {
+            echo "Terjadi Error Pembagian dengan Nol: " . $e->getMessage();
+        } catch (Exception $e) {
+            echo "Error ditemukan!: ". $e->getMessage();
+        }
+
+        $rounded_result = round($result);
+
+        echo$rounded_result;
+    }
 }
 ?>
