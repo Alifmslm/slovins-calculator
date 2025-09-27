@@ -2,7 +2,7 @@
     include_once("./controller/input-controller.php");
 ?>
 <div class="d-flex justify-content-center">
-    <form action="" method="POST" class="d-flex flex-column gap-4 w-75">
+    <form action="" method="POST" class="d-flex flex-column gap-4 w-25">
         <section class="form-group d-flex flex-column gap-2">
             <label>Jumlah Populasi</label>
             <input name="input_population" type="text" class="form-control" placeholder="Masukan jumlah populasi disini..." required>
