@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // ubah bentuk angka menjadi persen(desimal)
     $error_percen = $error_rate / 100;
-
+    // test
     $result = null;
 
     if ($population === false || $error_rate === false) {
