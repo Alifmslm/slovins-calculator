@@ -1,20 +1,29 @@
 // Memformat angka pada input populasi agar ada koma
 let input_population = document.getElementById("inpt-population")
+let input_error = document.getElementById("inpt-error")
 
-function formatNumber() {
-    let raw_population_value = input_population.value
-    let clean_population_value = raw_population_value.replace(/[^0-9]/g, '');
+function formatInput(paramInput) {
+    let raw_value = paramInput.value
 
-    let int_population_value = parseInt(clean_population_value, 10)
+    let clean_value = raw_value.replace(/[^0-9]/g, '');
 
-    if (isNaN(int_population_value)) {
-        input_population.value = ""
+    let int_value = parseInt(clean_value, 10)
+
+    if (isNaN(int_value)) {
+        paramInput.value = ""
         return
     }
 
-    let formated_population_value = int_population_value.toLocaleString("en-US")
-    input_population.value = formated_population_value
+    let formated_value = int_value.toLocaleString("en-US")
+    paramInput.value = formated_value
 }
 
-// gunakan listener input ketika kita ingin mengubah perilaku saat user sedang input sesuatu
-input_population.addEventListener("input", formatNumber)
+// gunakan listener input ketika kita ingin mengubah perilaku element html saat user sedang input sesuatu
+// ketika ada parameter, gunakan lambda function agar fungsi tidak langsung dijalankan
+input_population.addEventListener("input", function () {
+    formatInput(input_population)
+})
+
+input_error.addEventListener("input", function () {
+    formatInput(input_error)
+})
