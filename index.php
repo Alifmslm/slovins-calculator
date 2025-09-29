@@ -12,6 +12,7 @@
         <?php
             include_once("view/header.php");
             include_once("view/form_ui.php");
+            include_once("view/history.php");
         ?>
     </div>
     <script src="view/animation/input.js"></script>
