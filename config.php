@@ -4,11 +4,9 @@
     $databaseUsername = 'root';
     $databasePassword = '12345678';
 
-    $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+    $connection_db = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
-    if($mysqli->connect_error) {
-        echo'Connection Failed: ' . $mysqli->connect_error;
-    } else {
-        echo'Berhasil Tersambung dengan DB';
+    if($connection_db->connect_error) {
+        echo'Connection Failed: ' . $connection_db->connect_error;
     }
 ?>

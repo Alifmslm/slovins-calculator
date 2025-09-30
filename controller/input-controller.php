@@ -1,4 +1,6 @@
 <?php
+include("./model/calculation-model.php");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     # code...
     $population_raw = $_POST["input_population"];
@@ -33,6 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $rounded_result = round($result);
+
+        $model = new CalculationModel($connection_db);
+        $model->addCalculation($rounded_result, $error_rate, $population);
 
         include_once("./view/result.php");
     }
