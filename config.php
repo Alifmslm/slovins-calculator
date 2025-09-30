@@ -1,6 +1,6 @@
 <?php
     $databaseHost = 'localhost';
-    $databaseName = 'slovins-calculator';
+    $databaseName = 'slovins_db';
     $databaseUsername = 'root';
     $databasePassword = '12345678';
 
