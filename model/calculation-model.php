@@ -12,7 +12,7 @@ class CalculationModel
     {
         $query = "INSERT INTO calculation_table (population, error_rate, result) 
                 VALUES ('$paramPopulation', '$paramError', '$paramResult')";
-        return mysqli_query($this->connetion, $query);
+        return mysqli_query($this->connetion, $query);  
     }
 }
 ?>
