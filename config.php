@@ -2,7 +2,7 @@
     $databaseHost = 'localhost';
     $databaseName = 'slovins_db';
     $databaseUsername = 'root';
-    $databasePassword = '';
+    $databasePassword = '12345678';
 
     $connection_db = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
