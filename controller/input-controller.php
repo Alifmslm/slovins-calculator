@@ -1,6 +1,9 @@
 <?php
 include("./model/calculation-model.php");
 
+$list_data_array = null;
+$model = new CalculationModel($connection_db);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     # code...
     $population_raw = $_POST["input_population"];
@@ -36,12 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $rounded_result = round($result);
 
-        $model = new CalculationModel($connection_db);
         $model->addCalculation($rounded_result, $error_rate, $population);
-
-        $list_data_array = mysqli_fetch_array($model->list_data);
-
+        
         include_once("./view/result.php");
     }
+    $list_data_array = mysqli_fetch_array($model->showData());
 }
 ?>

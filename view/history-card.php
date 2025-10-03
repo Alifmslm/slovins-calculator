@@ -1,6 +1,9 @@
 <?php
-    include_once("./controller/input-controller.php");
-    foreach($list_data_array as $row):
+    if ($list_data_array === null) {
+        # code...
+        echo"<h5>Data Masih Kosong</h5>";
+    } else {
+        foreach($list_data_array as $row):
 ?>
 <div class="card">
     <div class="header-card d-flex flex-column gap-2 p-3">
@@ -19,5 +22,6 @@
     </div>
 </div>
 <?php
-    endforeach;
+        endforeach;
+    }
 ?>
