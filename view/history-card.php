@@ -1,5 +1,5 @@
 <?php
-if (mysqli_num_rows($list_data_array) === 0) {
+if ($list_data_array === null) {
     # code...
     echo "<h5>Data Masih Kosong</h5>";
 } else {
