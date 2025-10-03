@@ -11,6 +11,3 @@
         <button type="submit" class="btn btn-primary">Jalankan Perhitungan</button>
     </form>
 </div>
-<?php
-    require_once("./controller/input-controller.php");
-?>

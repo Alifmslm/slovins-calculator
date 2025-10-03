@@ -14,5 +14,9 @@ class CalculationModel
                 VALUES ('$paramPopulation', '$paramError', '$paramResult')";
         return mysqli_query($this->connetion, $query);  
     }
+
+    function showData() {
+        return mysqli_query($this->connetion,"SELECT * FROM calculation_table");
+    }
 }
 ?>
