@@ -3,7 +3,7 @@
         # code...
         echo"<h5>Data Masih Kosong</h5>";
     } else {
-        foreach($list_data_array as $row):
+        while ($row = $list_data_array) {
 ?>
 <div class="card">
     <div class="header-card d-flex flex-column gap-2 p-3">
@@ -22,6 +22,6 @@
     </div>
 </div>
 <?php
-        endforeach;
+        }
     }
 ?>
