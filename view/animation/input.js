@@ -1,6 +1,5 @@
 // Memformat angka pada input populasi agar ada koma
 let input_population = document.getElementById("inpt-population")
-let input_error = document.getElementById("inpt-error")
 
 function formatInput(paramInput) {
     let raw_value = paramInput.value
@@ -22,8 +21,4 @@ function formatInput(paramInput) {
 // ketika ada parameter, gunakan lambda function agar fungsi tidak langsung dijalankan
 input_population.addEventListener("input", function () {
     formatInput(input_population)
-})
-
-input_error.addEventListener("input", function () {
-    formatInput(input_error)
 })

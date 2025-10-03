@@ -6,7 +6,7 @@
         </section>
         <section class="form-group d-flex flex-column gap-2">
             <label>Tingkat Toleransi Kesalahan</label>
-            <input id="inpt-error" name="input_error" type="text" class="form-control" placeholder="Masukan tingkat toleransi kesalahan disini..." required>
+            <input name="input_error" type="text" class="form-control" placeholder="Masukan tingkat toleransi kesalahan disini..." required>
         </section>
         <button type="submit" class="btn btn-primary">Jalankan Perhitungan</button>
     </form>
