@@ -3,6 +3,8 @@ class CalculationModel
 {
     private $connetion;
 
+    public $list_data = mysqli_query($this->connetion,"SELECT * FROM calculation_table");
+
     public function __construct($connetion)
     {
         $this->connetion = $connetion;

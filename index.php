@@ -15,6 +15,7 @@
         <?php
             include_once("view/header.php");
             include_once("view/form_ui.php");
+            require_once("./controller/input-controller.php");
             include_once("view/history.php");
         ?>
     </div>

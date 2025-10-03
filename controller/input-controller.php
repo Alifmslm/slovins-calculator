@@ -39,6 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $model = new CalculationModel($connection_db);
         $model->addCalculation($rounded_result, $error_rate, $population);
 
+        $list_data_array = mysqli_fetch_array($model->list_data);
+
         include_once("./view/result.php");
     }
 }
