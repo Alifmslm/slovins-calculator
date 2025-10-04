@@ -1,6 +1,7 @@
 <?php
 include("./model/calculation-model.php");
 
+$rounded_result = null;
 $list_data_array = null;
 $model = new CalculationModel($connection_db);
 
@@ -12,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $population = filter_var($population_clean, FILTER_VALIDATE_INT);
     $error_rate = filter_input(INPUT_POST, 'input_error', FILTER_VALIDATE_FLOAT);
+
+    $error_rate_formated = number_format($error_rate);
 
     // ubah bentuk angka menjadi persen(desimal)
     $error_percen = $error_rate / 100;
@@ -37,9 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error ditemukan!: " . $e->getMessage();
         }
 
-        $rounded_result = round($result);
+        $rounded_result = number_format(round($result));
 
         $model->addCalculation($rounded_result, $error_rate, $population);
+        // Perlu diperbaiki, Result Tidak Terlihat
         include_once("./view/result.php");
         header("Location: index.php");
         exit;

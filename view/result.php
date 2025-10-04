@@ -1,3 +1,5 @@
+<?php
+?>
 <div class="d-flex flex-column align-items-center gap-2">
     <h3 class="text-center fw-bold">
         Hasil Perhitungan:
