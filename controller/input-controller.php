@@ -43,10 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         include_once("./view/result.php");
     }
-    $list_data_array = $model->showData();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $model->deleteData($_GET['id']);
 }
+
+$list_data_array = $model->showData();
 ?>
