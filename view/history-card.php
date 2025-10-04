@@ -18,7 +18,7 @@ if ($list_data_array === null) {
                 <h5 class="card-title mt-2 fw-bold"><?= $row['result'] ?> Sampel Dibutuhkan</h5>
             </div>
             <div class="card-footer d-flex justify-content-end">
-                <button class="btn btn-danger">Hapus History</button>
+                <a href="index.php?id=<?= $row['id'] ?>" class="btn btn-danger">Hapus History</a>
             </div>
         </div>
         <?php
