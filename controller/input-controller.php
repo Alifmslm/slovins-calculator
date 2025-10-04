@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             $result = $population / $denominator;
         } catch (DivisionByZeroError $ez) {
-            echo "Terjadi Error Pembagian dengan Nol: " . $e->getMessage();
+            echo "Terjadi Error Pembagian dengan Nol: " . $ez->getMessage();
         } catch (Exception $e) {
             echo "Error ditemukan!: " . $e->getMessage();
         }
@@ -40,12 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $rounded_result = round($result);
 
         $model->addCalculation($rounded_result, $error_rate, $population);
-
         include_once("./view/result.php");
+        header("Location: index.php");
+        exit;
     }
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset( $_GET['id'] )) {
     $model->deleteData($_GET['id']);
 }
 
