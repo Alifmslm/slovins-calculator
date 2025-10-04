@@ -18,5 +18,10 @@ class CalculationModel
     function showData() {
         return mysqli_query($this->connetion,"SELECT * FROM calculation_table ORDER BY id desc");
     }
+
+    function deleteData($paramId) {
+        $query = "DELETE FROM calculation_table WHERE id = $paramId";
+        return mysqli_query($this->connetion, $query);
+    }
 }
 ?>

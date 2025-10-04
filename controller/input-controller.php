@@ -45,4 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $list_data_array = $model->showData();
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $model->deleteData($_GET['id']);
+}
 ?>
