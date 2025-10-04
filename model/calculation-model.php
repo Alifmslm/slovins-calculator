@@ -16,7 +16,7 @@ class CalculationModel
     }
 
     function showData() {
-        return mysqli_query($this->connetion,"SELECT * FROM calculation_table");
+        return mysqli_query($this->connetion,"SELECT * FROM calculation_table ORDER BY id desc");
     }
 }
 ?>
