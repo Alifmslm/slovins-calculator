@@ -1,5 +1,6 @@
 <!-- This is Entry Point -->
 <?php
+    session_start();
     include_once("config.php");
 ?>
 <!DOCTYPE html>
@@ -16,6 +17,10 @@
             include_once("view/header.php");
             include_once("view/form_ui.php");
             require_once("./controller/input-controller.php");
+            if ($show_result) {
+                # code...
+                include_once("./view/result.php");
+            }
             include_once("view/history.php");
         ?>
     </div>
