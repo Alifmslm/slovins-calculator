@@ -13,7 +13,7 @@ if ($list_data_array === null) {
                 </div>
                 <div class="item-text d-flex gap-1">
                     <p class="card-subtitle">Persentase Error: </p>
-                    <p class="card-subtitle history-value"><strong><?= number_format($row['error_rate']) ?></strong></p>
+                    <p class="card-subtitle history-value"><strong><?= number_format($row['error_rate']) ?>%</strong></p>
                 </div>
                 <h5 class="card-title mt-2 fw-bold history-value"><?= number_format($row['result']) ?> Sampel Dibutuhkan</h5>
             </div>
