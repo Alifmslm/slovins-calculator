@@ -1,5 +1,5 @@
 <div class="container mb-4">
-    <form action="" method="POST" class="w-100 d-flex flex-column gap-4 w-25">
+    <form action="" method="POST" class="d-flex flex-column gap-4">
         <section class="form-group d-flex flex-column gap-2">
             <label>Jumlah Populasi</label>
             <input id="inpt-population" name="input_population" type="text" class="form-control" placeholder="Masukan jumlah populasi disini..." required>
